@@ -1,33 +1,33 @@
 <div class="container">
   <h3>Angular Forms</h3>
-  <form>
+  <form #form="ngForm">
     <div class="form-group">
       <label>First Name</label>
-      <input type="text" class="form-control" name="firstName" placeholder="First Name">
+      <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" placeholder="First Name">
     </div>
     <div class="form-group">
       <label>Last Name</label>
-      <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+      <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" placeholder="Last Name">
     </div>
     <div class="checkbox">
       <label>
-        <input type="checkbox"> Full Time Employee
+        <input type="checkbox" [(ngModel)]="model.isFullTime"> Full Time Employee
       </label>
     </div>
     <label>Payment Type</label>
     <div class="radio">
       <label>
-        <input type="radio" name="pay-type" value="w2"> W2
+        <input type="radio" name="paymentType" [(ngModel)]="model.paymentType" value="w2"> W2
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" name="pay-type" value="1099"> 1099
+        <input type="radio" name="paymentType" [(ngModel)]="model.paymentType" value="1099"> 1099
       </label>
     </div>
     <div class="form-group">
       <label>Primary Language</label>
-      <select class="form-control">
+      <select class="form-control" name="primaryLanguage" [(ngModel)]="model.primaryLanguage">
         <option *ngFor="let lang of languages">{{lang}}</option>
       </select>
     </div>
@@ -38,7 +38,11 @@
     <div class="form-group">
       <button class="btn btn-primary">OK</button>
     </div>
-
+    <pre>
+      Model: {{model | json}}
+      <br>
+      Angular {{form.value | json}}
+    </pre>
   </form>
 </div>
 
