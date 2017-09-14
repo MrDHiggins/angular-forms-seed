@@ -9,7 +9,7 @@ import {Employee} from '../../model/employee';
 export class FormBasicsComponent implements OnInit {
 
   languages = ['Setswana', 'isiXhosa', 'isiZulu', 'Tsonga', 'Venda'];
-  model = new Employee('Kabo', 'Rasilo', true, 'w2', "isiXhosa");
+  model = new Employee('Kabo', 'Rasilo', true, 'w2', 'isiXhosa');
 
   constructor() { }
 
