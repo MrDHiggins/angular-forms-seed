@@ -1,6 +1,10 @@
 ### Angular Forms Seed
 
-This seed projet is focused at teaching one the fundamentals of Angular (2+) Forms. The project has been split into tag versions, starting at v1.0.0.
+This seed projet is focused at teaching one the fundamentals of Angular (2+) Forms. The project has been split into tag versions, starting at v1.0.0 then v1.1.0. 
+```git tag``` to see the list of tags available. ```git checkout v1.0.0```.
+
+#### Execution
+To run the app, ```ng serve -o``` the application will open on the browser.
 ### License
 ```
 MIT License
