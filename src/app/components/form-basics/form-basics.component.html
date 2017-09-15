@@ -1,28 +1,34 @@
 <div class="container">
   <h3>Angular Forms</h3>
   <form #form="ngForm">
-    <div class="form-group">
-      <label>First Name</label>
-      <input type="text" class="form-control" #firstName name="firstName" [(ngModel)]="model.firstName" placeholder="First Name">
+    <div class="form-group"  [class.has-error] = "firstName.invalid && firstName.dirty">
+      <label class="control-label">First Name</label>
+      <input type="text" class="form-control has-error" #firstName="ngModel" required="required" name="firstName" [(ngModel)]="model.firstName" placeholder="First Name">
+      <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
+        First name is required
+      </div>
     </div>
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" placeholder="Last Name">
+    <div class="form-group" [class.has-error] = "lastName.invalid && lastName.dirty">
+      <label class="control-label">Last Name</label>
+      <input type="text" required #lastName="ngModel" class="form-control" name="lastName" [(ngModel)]="model.lastName" placeholder="Last Name">
+      <div *ngIf="lastName.invalid && lastName.dirty" class="alert alert-danger">
+        Last name is required
+      </div>
     </div>
     <div class="checkbox">
       <label>
-        <input type="checkbox" [(ngModel)]="model.isFullTime"> Full Time Employee
+        <input type="checkbox" required [(ngModel)]="model.isFullTime"> Full Time Employee
       </label>
     </div>
     <label>Payment Type</label>
     <div class="radio">
       <label>
-        <input type="radio" name="paymentType" [(ngModel)]="model.paymentType" value="w2"> W2
+        <input type="radio" required name="paymentType" [(ngModel)]="model.paymentType" value="w2"> W2
       </label>
     </div>
     <div class="radio">
       <label>
-        <input type="radio" name="paymentType" [(ngModel)]="model.paymentType" value="1099"> 1099
+        <input type="radio" required name="paymentType" [(ngModel)]="model.paymentType" value="1099"> 1099
       </label>
     </div>
     <div class="form-group">
