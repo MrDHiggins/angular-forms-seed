@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormBasicsComponent } from './components/form-basics/form-basics.component';
 import {FormsModule} from '@angular/forms';
 import { FormPosterService } from './services/form-poster.service';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FormPosterService } from './services/form-poster.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [FormPosterService],
   bootstrap: [AppComponent]

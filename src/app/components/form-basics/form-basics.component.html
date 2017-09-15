@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Angular Forms</h3>
-  <form #form="ngForm">
+  <form #form="ngForm" (submit)="submitForm(form)" novalidate>
     <div class="form-group"  [class.has-error] = "firstName.invalid && firstName.dirty">
       <label class="control-label">First Name</label>
       <input type="text" class="form-control has-error" #firstName="ngModel" required="required" name="firstName" [(ngModel)]="model.firstName" placeholder="First Name">
