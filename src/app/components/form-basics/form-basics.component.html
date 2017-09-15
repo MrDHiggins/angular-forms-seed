@@ -17,7 +17,7 @@
     </div>
     <div class="checkbox">
       <label>
-        <input type="checkbox" required [(ngModel)]="model.isFullTime"> Full Time Employee
+        <input type="checkbox" name="isFullTime" required [(ngModel)]="model.isFullTime"> Full Time Employee
       </label>
     </div>
     <label>Payment Type</label>
@@ -31,9 +31,12 @@
         <input type="radio" required name="paymentType" [(ngModel)]="model.paymentType" value="1099"> 1099
       </label>
     </div>
-    <div class="form-group">
+    <div class="form-group" [class.has-error]="hasPrimaryLanguageError">
       <label>Primary Language</label>
-      <select class="form-control" name="primaryLanguage" [(ngModel)]="model.primaryLanguage">
+      <select class="form-control" name="primaryLanguage" #primaryLanguage [(ngModel)]="model.primaryLanguage"
+              (blur)="validatePrimaryLanguage(primaryLanguage.value)"
+              (change)="validatePrimaryLanguage(primaryLanguage.value)">
+        <option value="default">Select Language</option>
         <option *ngFor="let lang of languages">{{lang}}</option>
       </select>
     </div>
