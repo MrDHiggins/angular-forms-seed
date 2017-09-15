@@ -45,7 +45,7 @@
       <input type="date" class="form-control">
     </div>
     <div class="form-group">
-      <button class="btn btn-primary">OK</button>
+      <button class="btn btn-primary" [disabled]="form.invalid && form.pristine">Submit</button>
     </div>
     <pre>
       Model: {{model | json}}
@@ -53,6 +53,8 @@
       Angular {{form.value | json}}
       <br>
       <p>{{firstName.className}}</p>
+      <br>
+      <p>{{form.valid}}</p>
     </pre>
   </form>
 </div>
